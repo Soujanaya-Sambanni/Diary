@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+
+body{
+    font-family: 'Architects Daughter', cursive;
+    background-color: #fcebe7 !important;
+}
+.card-img{
+ width: 250px;
+ 
+}
+.card-img-overlay{
+    padding: 40px;
+    
+    
+}
+.row{
+    justify-content: space-between;
+}

@@ -1,0 +1,90 @@
+<div class="container mt-2">
+    <p class="h3 text-danger fw-bold me-2" data-bs-toggle="modal" data-bs-target="#example">
+        <a class="btn btn-danger btn-sm " routerLink="note">
+            <i class="fa fa-plus-circle me-2"></i>New
+        </a>
+    </p>
+    <div class="modal" id="example">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header" style="background-color:rgb(202, 126, 126)" >
+                <h3 style="color:white" class="modal-title" id="example">New Entry</h3>
+                <i class="fa fa-times" data-bs-dismiss="modal"></i>
+                
+              </div>
+              <div class="modal-body" style="font-family: 'Poppins';">
+                    <form [formGroup]="noteform">
+                        <div class="form-group mb-2">
+                            <label for="exampleInputEmail1">Enter Date</label>
+                            <input type="date" class="form-control mt-2" formControlName="date" placeholder="Enter Date">
+                            <span class="text-danger"
+                                *ngIf="noteform.controls['date'].dirty && noteform.hasError('required','date')">*Date is
+                                required</span>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label for="exampleInputEmail1">Enter Feeling</label>
+                            <input type="text" class="form-control mt-2" formControlName="feeling" placeholder="Enter Feeling">
+                            <span class="text-danger"
+                                *ngIf="noteform.controls['feeling'].dirty && noteform.hasError('required','feeling')">*Feeling
+                                is required</span>
+                        </div>
+    
+                        <div class="form-group mb-2">
+                            <label for="exampleInputEmail1">Enter Subject</label>
+                            <input type="name" class="form-control mt-2" formControlName="subject" placeholder="Enter Subject">
+                            <span class="text-danger"
+                                *ngIf="noteform.controls['subject'].dirty && noteform.hasError('required','subject')">*Subject
+                                is required</span>
+                        </div>
+    
+                        <div class="form-group mb-2">
+                            <label for="exampleInputEmail1">Enter Description</label>
+                            <textarea rows="4" class="form-control mt-2" formControlName="description"
+                                placeholder="Enter Description"></textarea>
+                            <span class="text-danger"
+                                *ngIf="noteform.controls['description'].dirty && noteform.hasError('required','description')">*Description
+                                is required</span>
+                        </div>
+                        <div >
+                            <button (click)="addnote(this.noteform.value)" type="button" class="btn btn-primary me-2" data-bs-dismiss="modal"><i class="fas fa-save"></i></button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-times"></i></button>
+                 
+                        </div>
+                    </form>
+                
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container ">
+    <div class="row gy-3 my-3">
+        <div class="col-md-6 col-xl-4" *ngFor="let item of data">
+            <div class="card shadow-lg">
+                <div class="card"  style="width: fit-content; height:fit-content;">
+                    <img class="card-img-top"
+                        src="https://img.freepik.com/premium-vector/bulltongue-arrowhead-crumpled-ripped-pink-paper-background-vector_53876-164896.jpg"
+                        alt="Card image">
+                    <div class="card-img-overlay">
+                        <p class="card-title">{{item.date}}</p>
+                        <p class="card-title"> {{item.feeling}}</p>
+                        <h3 class="card-title "> {{item.subject}}</h3>
+                        <p class="card-title">{{item.description}}</p>
+                        
+                        <br>
+                        <div>
+                            <button routerLink="/update/{{item.id}}" class="btn btn-warning me-2"><i class="fa fa-pen"></i></button>
+                            <button class="btn btn-danger" (click)="deletenote(item.id)"> <i class="fa fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

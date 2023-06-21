@@ -1,0 +1,25 @@
+{
+  "note": [
+    {
+      "id": 3,
+      "date": "2023-06-12",
+      "subject": "Birthday",
+      "description": "Today is a special day for me, as it is the birthday of one of my closest friends.I feel incredibly blessed to have them as a friend. ",
+      "feeling": "'🥳"
+    },
+    {
+      "id": 4,
+      "date": "2023-06-12",
+      "subject": "Outing",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque qui natus asperiores laboriosam a modi accusantium minus.",
+      "feeling": "😊"
+    },
+    {
+      "id": 7,
+      "date": "2023-06-14",
+      "subject": "Meet Up",
+      "description": "Dear Diary,\nI woke up at 6'o clock in the morning. Today we all went to Fantasize Amusement park near Pune. ",
+      "feeling": "🤩"
+    }
+  ]
+}
